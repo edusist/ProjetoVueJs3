@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+        <primeiroComponente /> 
+        <p>O dado de app é: {{ testando }}</p>
+        <LifeCycle/>
+    </div>
+ 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+//Tem que importar do componente e disser de onde está sendo importado e patch
+import primeiroComponente from './components/primeiroComponente.vue';
+import LifeCycle from './components/LifeCycle.vue';
+
+//Necessario o exportar, para arquivo main.js saber que este e arquivo App.vue
+export default{
+    name: 'App',
+    //Necessário dizer para Vue que vou utilizar um componente 
+    components: {
+        primeiroComponente,
+        LifeCycle
+        
+    },
+    data(){
+        return {
+            testando: 'teste'
+        }
+    }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
