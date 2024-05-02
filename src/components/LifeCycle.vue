@@ -20,14 +20,19 @@ export default{
         setTimeout(() => {
             this.nome= 'Eduardo'
         }, 1000);        
-          
+        this.LifeCycle()
         },
     mounted(){
         
         setTimeout(() => {
             this.nome = 'Pedro'
         }, 2000);
-   
+        this.LifeCycle()
+    },
+    methods:{
+        LifeCycle(){
+            console.log('Executou');
+        }
     }
 
 }

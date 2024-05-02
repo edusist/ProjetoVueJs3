@@ -1,11 +1,19 @@
 <template>
-    <img :src="avatar" :alt="descricao">
+    <div>
+        <img :src="avatar" :alt="descricao">
+        <Reutilizacao />
+    </div>
 </template>
 
 <script>
-export default{
+
+import Reutilizacao from './Reutilizacao.vue'
+export default {
+    components: {
+        Reutilizacao
+    },
     name: 'Picture',
-    data(){
+    data() {
         return {
             avatar: '/img/avatar.png',
             descricao: 'Eduardo Augusto'
